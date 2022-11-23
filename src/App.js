@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import HomePage from "./pages/HomePage/HomePage";
 import NavBar from "./components/NavBar";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
+import ShopPage from "./pages/ShopPage/ShopPage"
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
-
+          <Route path="/Cart" element={< ShopPage />} />
         </Routes>
       </ContainerScreen>
     </BrowserRouter>
