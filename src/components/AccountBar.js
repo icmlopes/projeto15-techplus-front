@@ -1,15 +1,22 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export default function AccountBar(){
-    return(
+
+export default function AccountBar() {
+    return (
         <Container>
-            <Icon>
-            <ion-icon name="person-circle-outline"></ion-icon>
-            <p>Login</p>
-            </Icon>
+            <Link to="/login">
+                <Icon>
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                    <p>Login</p>
+                </Icon>
+            </Link>
+            
+            <Link to="sign-up">
             <Text>
-                    <h5>Não tem uma conta ainda? Cadastre-se</h5>
+                <h5>Não tem uma conta ainda? Cadastre-se</h5>
             </Text>
+            </Link>
             {/* <Text>
                 <h5>Olá, Fulano</h5>
             </Text>
@@ -17,11 +24,12 @@ export default function AccountBar(){
                 <h5>Sair</h5>
             </Text> */}
 
+
         </Container>
     )
 }
 
-const Container =  styled.div`
+const Container = styled.div`
 background-color: #8394AE;
 height: 25px;
 width: 100%;
@@ -30,7 +38,7 @@ align-items: center;
 justify-content:space-between;
 `
 
-const Text =  styled.div`
+const Text = styled.div`
     display: flex;
     font-size: 10px;
     color: #fff;
