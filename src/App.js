@@ -6,12 +6,15 @@ import HomePage from "./pages/HomePage/HomePage";
 import NavBar from "./components/NavBar";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import ShopPage from "./pages/ShopPage/ShopPage"
+import { UserContextProvider } from "./context/UserContext";
+
 
 export default function App() {
   return (
     <BrowserRouter>
       <ContainerScreen>
         <GlobalStyle />
+        <UserContextProvider>
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -19,6 +22,7 @@ export default function App() {
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/Cart" element={< ShopPage />} />
         </Routes>
+        </UserContextProvider>
       </ContainerScreen>
     </BrowserRouter>
   );
