@@ -2,11 +2,10 @@ import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 import AccountBar from "../../components/AccountBar"
-import { InfoContext } from "../../context/Info"
 
 export default function HomePage() {
 
-    const { product, setProduct } = useContext(InfoContext)
+    const [product, setProduct] = useState([])
 
     useEffect(
         () => {
