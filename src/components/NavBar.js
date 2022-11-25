@@ -1,15 +1,17 @@
 import styled from "styled-components"
-
+import {  Link } from "react-router-dom"
 
 export default function NavBar() {
     return (
         <Container>
+            <Link to="/">
                 <Title>
                     <h1>TechPlus</h1>
                 </Title>
-                <Icon>
-                    <ion-icon name="cart-outline"></ion-icon>
-                </Icon>
+            </Link>
+            <Icon>
+                <ion-icon name="cart-outline"></ion-icon>
+            </Icon>
         </Container>
     )
 }
