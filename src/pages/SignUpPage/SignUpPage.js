@@ -17,7 +17,7 @@ export default function SignUpPage() {
     function registration(event) {
         event.preventDefault()
 
-        const URL = "http://localhost:4000/sign-up"
+        const URL = "http://localhost:5000/sign-up"
 
         const promise = axios.post(URL, form)
         promise.then(() => navigate("/"))
@@ -69,7 +69,6 @@ export default function SignUpPage() {
                         <h3>Já tem uma conta? Faça login!</h3>
                     </Text>
                 </Link>
-
             </ContainerLogin>
         </Container>
     )
