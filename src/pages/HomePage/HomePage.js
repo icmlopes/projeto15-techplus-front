@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 import AccountBar from "../../components/AccountBar"
 
@@ -114,6 +114,7 @@ const ContainerAllProducts = styled.div`
 `
 
 const ContainerProdutc = styled.div`
+padding: 5px 10px 5px 10px;
 background-color: #EFEFEF;
 display: flex;
 align-items: center;
@@ -126,6 +127,7 @@ margin-right: 10px;
 min-width: 100px;
 border-radius: 10px;
 border: none;
+
 img{
     width: 80px;
     height: 70px;
