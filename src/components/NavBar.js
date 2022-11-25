@@ -5,7 +5,7 @@ export default function NavBar() {
     return (
         <Container>
                 <Title>
-                    <h1>EXCLUSIVE STYLE</h1>
+                    <h1>TechPlus</h1>
                 </Title>
                 <Icon>
                     <ion-icon name="cart-outline"></ion-icon>
@@ -30,7 +30,8 @@ const Container = styled.div`
 const Title = styled.div`
     color: white;
     padding-left: 20px;
-    font-family: 'Rubik Glitch', cursive;
+    font-family: 'Electrolize', sans-serif;
+    font-size: 30px;
 `
 
 const Icon = styled.div`
