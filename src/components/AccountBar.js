@@ -23,8 +23,6 @@ export default function AccountBar() {
             <Text>
                 <h5>Sair</h5>
             </Text> */}
-
-
         </Container>
     )
 }
