@@ -26,6 +26,6 @@ export default function App() {
 
 const ContainerScreen = styled.div`
   background-color: #EFEFEF;  
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 `;
