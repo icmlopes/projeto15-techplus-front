@@ -137,11 +137,14 @@ h3{
     color: #000000;
     text-align: center;
     margin-top: 5px;
-    font-weight: bold;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
 }
 h4{
     font-size: 10px;
     color: #000000;
     margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
 `
