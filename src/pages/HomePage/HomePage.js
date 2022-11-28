@@ -15,7 +15,7 @@ export default function HomePage() {
 
             promise.then((res) => {
                 setProduct(res.data)
-                console.log(res)
+                console.log('useEffect: homepage', res)
             })
             promise.catch((err) => {
                 console.log(err.response.data)

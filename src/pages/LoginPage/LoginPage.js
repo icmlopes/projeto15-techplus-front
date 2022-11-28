@@ -19,6 +19,7 @@ export default function LoginPage() {
     
     axios.post(`${BASE_URL}/sign-in`, form)
         .then((res) => {
+          setUserdata(res)
             console.log(res);
         })
         .catch((err) => {
