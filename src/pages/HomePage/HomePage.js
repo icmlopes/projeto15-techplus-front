@@ -24,7 +24,16 @@ export default function HomePage() {
         }, []
     )
 
-    
+    function addToCart(prod) {
+        const selected = purchasedata.some(purc => prod === purc);
+        if (selected){
+            const newPurchase = purchasedata.filter(purc => prod !== purc);
+            setPurchasedata(newPurchase);
+        } else {
+            setPurchasedata(...purchasedata, prod)
+        }
+        console.log(purchasedata);
+    }
     
     const notebookTypes = product.filter(type => type.type === "notebook")
     const celularTypes = product.filter(type => type.type === "celular")
@@ -38,7 +47,7 @@ export default function HomePage() {
                 <ShowProducts>
                     <ContainerAllProducts>
                         {notebookTypes.map((prod,idx) => (
-                            <ContainerProdutc key={idx} >
+                            <ContainerProdutc key={idx} onClick={() => addToCart(prod)} >
                             <img src={prod.image} alt="Imagem do produto"/>
                             <h3>{prod.name}</h3>
                             <h4>R$ {prod.price}</h4>
