@@ -2,9 +2,10 @@ import styled from "styled-components";
 import { useState } from "react";
 import { Input } from "../../components/Input";
 import {StyledButton} from '../../components/StyledButton'
+import { useForm } from "../../components/useForm";
 
 export default function ShopPage() {
-    const [buyerform, setBuyerForm] = useState({
+    const [buyerform, handleForm] = useForm({
         cardName: "",
         cardNumber: "",
         securityNumber: '' ,
@@ -22,11 +23,7 @@ export default function ShopPage() {
           <Input
             name="cardName"
             value={buyerform.cardName}
-            onChange={(e) =>
-              setBuyerForm({
-                ...buyerform,
-                [e.target.name]: e.target.value,
-              })
+            onChange={handleForm
             }
             type="text"
             placeholder="Nome impresso no cartão"
@@ -34,11 +31,7 @@ export default function ShopPage() {
           <Input
             name="cardNumber"
             value={buyerform.cardNumber}
-            onChange={(e) =>
-              setBuyerForm({
-                ...buyerform,
-                [e.target.name]: e.target.value,
-              })
+            onChange={handleForm
             }
             type="text"
             placeholder="Digitos do cartão"
@@ -46,11 +39,7 @@ export default function ShopPage() {
           <ShortInput
             name="securityNumber"
             value={buyerform.securityNumber}
-            onChange={(e) =>
-              setBuyerForm({
-                ...buyerform,
-                [e.target.name]: parseFloat(e.target.value),
-              })
+            onChange={handleForm
             }
             type="number"
             placeholder="Codigo de segurança"
@@ -58,12 +47,7 @@ export default function ShopPage() {
           <ShortInput
             name="expirationDate"
             value={buyerform.expirationDate}
-            onChange={(e) =>
-              setBuyerForm({
-                ...buyerform,
-                [e.target.name]: e.target.value,
-              })
-            }
+            onChange={(handleForm)}
             type="text"
             placeholder="Validade"
           />

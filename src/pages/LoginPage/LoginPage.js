@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { useForm } from "../../components/useForm";
@@ -20,7 +20,8 @@ export default function LoginPage() {
     axios.post(`${BASE_URL}/sign-in`, form)
         .then((res) => {
           setUserdata(res)
-            console.log(res);
+            console.log("userContext: ", res);
+          navigate('/')
         })
         .catch((err) => {
             console.log(err.response.data);

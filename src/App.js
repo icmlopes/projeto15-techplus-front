@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import ShopPage from "./pages/ShopPage/ShopPage"
 import { UserContextProvider } from "./context/UserContext";
+import { PurchaseContextProvider } from "./context/PurchaseContext";
 
 
 export default function App() {
@@ -16,12 +17,14 @@ export default function App() {
         <GlobalStyle />
         <UserContextProvider>
         <NavBar />
+        <PurchaseContextProvider>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/Cart" element={< ShopPage />} />
         </Routes>
+        </PurchaseContextProvider>
         </UserContextProvider>
       </ContainerScreen>
     </BrowserRouter>

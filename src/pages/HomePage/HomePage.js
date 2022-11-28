@@ -2,9 +2,10 @@ import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import styled from "styled-components"
 import AccountBar from "../../components/AccountBar"
+import { PurchaseContext } from "../../context/PurchaseContext"
 
 export default function HomePage() {
-
+    const { purchasedata, setPurchasedata} = useContext(PurchaseContext);
     const [product, setProduct] = useState([])
 
     useEffect(
@@ -22,6 +23,8 @@ export default function HomePage() {
             })
         }, []
     )
+
+    
     
     const notebookTypes = product.filter(type => type.type === "notebook")
     const celularTypes = product.filter(type => type.type === "celular")
@@ -34,8 +37,8 @@ export default function HomePage() {
                 <Title>Computadores</Title>
                 <ShowProducts>
                     <ContainerAllProducts>
-                        {notebookTypes.map((prod) => (
-                            <ContainerProdutc>
+                        {notebookTypes.map((prod,idx) => (
+                            <ContainerProdutc key={idx} >
                             <img src={prod.image} alt="Imagem do produto"/>
                             <h3>{prod.name}</h3>
                             <h4>R$ {prod.price}</h4>
@@ -46,8 +49,8 @@ export default function HomePage() {
                 <Title>Celulares</Title>
                 <ShowProducts>
                     <ContainerAllProducts>
-                        {celularTypes.map((prod) => (
-                            <ContainerProdutc>
+                        {celularTypes.map((prod,idx) => (
+                            <ContainerProdutc key={idx} >
                             <img src={prod.image} alt="Imagem do produto"/>
                             <h3>{prod.name}</h3>
                             <h4>R$ {prod.price}</h4>
@@ -58,8 +61,8 @@ export default function HomePage() {
                 <Title>Acessórios</Title>
                 <ShowProducts>
                     <ContainerAllProducts>
-                        {acessorioTypes.map((prod) => (
-                            <ContainerProdutc>
+                        {acessorioTypes.map((prod, idx) => (
+                            <ContainerProdutc key={idx}>
                             <img src={prod.image} alt="Imagem do produto"/>
                             <h3>{prod.name}</h3>
                             <h4>R$ {prod.price}</h4>
